@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jorge Giuffra: fintech growth, built like engineering</title>
+<meta name="description" content="Growth & Commercial Director at MultiMoney. A fintech head of growth who works like a marketing engineer: I build my own agents and my own measurement.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#eef1f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e12" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jorge Giuffra: fintech growth, built like engineering">
+<meta property="og:description" content="A fintech head of growth who works like a marketing engineer. I build my own agents and my own measurement.">
+<meta property="og:image" content="https://jorgegiuffra.com/og.png">
+<meta property="og:url" content="https://jorgegiuffra.com/">
+<link rel="canonical" href="https://jorgegiuffra.com/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@JorgeGiuffra">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<script>
+  // Runs before first paint so a saved choice never flashes the other theme
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+<style>
+  /* Light is the base: what most visitors get and what shows with no signal at all.
+     Dark applies when the system asks for it, or when the visitor picks it with the button. */
+  :root {
+    color-scheme: light dark;
+    --bg: #eef1f5; --text: #14161a; --muted: #4d515b; --accent: #0a5f3c; --on-accent: #ffffff;
+    --glass: rgba(255,255,255,.62); --chip: rgba(255,255,255,.7); --nav: rgba(255,255,255,.66);
+    --stroke: rgba(255,255,255,.9); --shine: #ffffff; --line: rgba(20,22,26,.14); --edge: rgba(20,22,26,.55);
+    --shadow: 0 10px 30px rgba(40,52,80,.10); --shadow-lg: 0 14px 36px rgba(40,52,80,.12);
+    --solid: #ffffff; --cell: rgba(20,22,26,.08); --cell-rgb: 10,95,60;
+    --b1: rgba(52,211,153,.30); --b2: rgba(129,140,248,.28); --b3: rgba(56,189,248,.20); --b4: rgba(52,211,153,.20);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0c0e12; --text: #f2f3f5; --muted: #b8bbc5; --accent: #86e3b6; --on-accent: #0c0e12;
+      --glass: rgba(255,255,255,.065); --chip: rgba(255,255,255,.08); --nav: rgba(18,20,26,.62);
+      --stroke: rgba(255,255,255,.12); --shine: rgba(255,255,255,.18); --line: rgba(255,255,255,.14); --edge: rgba(255,255,255,.6);
+      --shadow: 0 10px 34px rgba(0,0,0,.35); --shadow-lg: 0 14px 36px rgba(0,0,0,.38);
+      --solid: #16181d; --cell: rgba(255,255,255,.09); --cell-rgb: 134,227,182;
+      --b1: rgba(52,211,153,.17); --b2: rgba(99,102,241,.24); --b3: rgba(14,165,233,.13); --b4: rgba(52,211,153,.12);
+    }
+    :root:not([data-theme="light"]) .i-moon { display: none; }
+    :root:not([data-theme="light"]) .i-sun { display: block; }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0c0e12; --text: #f2f3f5; --muted: #b8bbc5; --accent: #86e3b6; --on-accent: #0c0e12;
+    --glass: rgba(255,255,255,.065); --chip: rgba(255,255,255,.08); --nav: rgba(18,20,26,.62);
+    --stroke: rgba(255,255,255,.12); --shine: rgba(255,255,255,.18); --line: rgba(255,255,255,.14); --edge: rgba(255,255,255,.6);
+    --shadow: 0 10px 34px rgba(0,0,0,.35); --shadow-lg: 0 14px 36px rgba(0,0,0,.38);
+    --solid: #16181d; --cell: rgba(255,255,255,.09); --cell-rgb: 134,227,182;
+    --b1: rgba(52,211,153,.17); --b2: rgba(99,102,241,.24); --b3: rgba(14,165,233,.13); --b4: rgba(52,211,153,.12);
+  }
+  :root[data-theme="dark"] .i-moon { display: none; }
+  :root[data-theme="dark"] .i-sun { display: block; }
+  :root[data-theme="light"] { color-scheme: light; }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 96px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--text); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  h1, h2, h3, p { margin: 0; }
+  .display { font-family: "Space Grotesk", Inter, sans-serif; }
+
+  /* Colour behind the glass: without it there is nothing to refract */
+  .ambient {
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(520px 420px at 8% 3%, var(--b1), transparent 70%),
+      radial-gradient(560px 460px at 96% 12%, var(--b2), transparent 70%),
+      radial-gradient(620px 480px at 30% 60%, var(--b3), transparent 70%),
+      radial-gradient(560px 460px at 92% 95%, var(--b4), transparent 70%);
+  }
+
+  /* The material */
+  .glass {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(22px) saturate(160%); backdrop-filter: blur(22px) saturate(160%);
+    border: 1px solid var(--stroke);
+    box-shadow: inset 0 1px 0 var(--shine), var(--shadow);
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;
+    background: var(--chip); border: 1px solid var(--stroke); box-shadow: inset 0 1px 0 var(--shine);
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 96px; }
+
+  nav.top {
+    position: sticky; top: 16px; z-index: 10; margin-top: 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    padding: 6px 6px 6px 22px; border-radius: 999px;
+    background: var(--nav);
+    -webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid var(--stroke); box-shadow: inset 0 1px 0 var(--shine), var(--shadow);
+  }
+  .brand { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 600; font-size: 17px; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+  .navlinks { display: flex; align-items: center; gap: 2px; }
+  .navlinks a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px; text-decoration: none; font-size: 14px; color: var(--muted); transition: background .2s, color .2s; }
+  .navlinks a:hover { color: var(--text); background: var(--chip); }
+  .theme {
+    width: 44px; height: 44px; margin-left: 6px; padding: 0; justify-content: center; cursor: pointer;
+    color: var(--text); font: inherit;
+  }
+  .i-sun { display: none; }
+
+  /* Hero */
+  .hero { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; padding: 72px 0 24px; }
+  .hero-col { flex: 999 1 520px; min-width: 0; }
+  .who { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .avatar { flex: none; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-family: "Space Grotesk", Inter, sans-serif; font-weight: 600; font-size: 18px; color: var(--accent); background: var(--chip); border: 1px solid var(--stroke); box-shadow: inset 0 1px 0 var(--shine), var(--shadow); }
+  .handle { font-weight: 600; }
+  .handle span { font-weight: 400; font-size: 14px; color: var(--muted); }
+  .role { font-size: 15px; font-weight: 500; }
+  .creds { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .cred { padding: 7px 16px 7px 12px; font-size: 14px; font-weight: 500; }
+  .cred svg { flex: none; color: var(--accent); }
+  h1 { margin-bottom: 20px; font-weight: 500; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.12; letter-spacing: -.025em; color: var(--muted); text-wrap: balance; }
+  h1 b { color: var(--text); font-weight: 600; }
+  .lede { margin-bottom: 28px; max-width: 54ch; font-size: 18px; line-height: 1.55; color: var(--muted); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .2s ease; }
+  .cta:hover { transform: translateY(-1px); }
+  .cta.primary { background: var(--accent); color: var(--on-accent); box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 8px 20px rgba(0,0,0,.18); }
+  .cta.primary:hover { color: var(--on-accent); }
+  .cta.secondary { background: var(--chip); border: 1px solid var(--stroke); box-shadow: inset 0 1px 0 var(--shine), var(--shadow); -webkit-backdrop-filter: blur(22px) saturate(160%); backdrop-filter: blur(22px) saturate(160%); }
+
+  .now { flex: 1 1 320px; min-width: 0; border-radius: 26px; padding: 24px; box-shadow: inset 0 1px 0 var(--shine), var(--shadow-lg); }
+  .now-item { padding: 12px 0; border-top: 1px solid var(--line); font-weight: 500; }
+  .now-item:last-child { padding-bottom: 0; }
+  .kicker { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+
+  section { padding-top: 64px; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+  h2 { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .sec-head a { font-size: 14px; }
+  .now h2 { margin-bottom: 14px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+  .card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; border-radius: 22px; padding: 22px; transition: transform .25s ease; }
+  .card:hover { transform: translateY(-2px); }
+  .card h3 { font-size: 19px; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; }
+  .card p { font-size: 15px; line-height: 1.55; color: var(--muted); }
+
+  .gh { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; border-radius: 22px; padding: 26px; }
+  .gh-num { font-size: 56px; font-weight: 600; line-height: 1; letter-spacing: -.03em; }
+  .gh-text { flex: 1 1 220px; min-width: 0; }
+  .gh-text p { margin-top: 8px; font-size: 15px; color: var(--muted); }
+  .gh-scroll { flex: 999 1 420px; min-width: 0; overflow-x: auto; display: flex; flex-direction: row-reverse; scrollbar-width: none; }
+  .gh-scroll::-webkit-scrollbar { display: none; }
+  .gh-grid { display: flex; flex: none; gap: 3px; padding-bottom: 4px; }
+  .gh-week { display: flex; flex-direction: column; gap: 3px; }
+  .gh-month { width: 10px; height: 16px; font-size: 10px; line-height: 16px; white-space: nowrap; color: var(--muted); }
+  .gh-cell { width: 10px; height: 10px; border-radius: 3px; background: var(--cell); }
+
+  ol.rules { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); column-gap: 40px; }
+  ol.rules li { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+  .num { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 600; font-size: 14px; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .rule-t { font-weight: 600; }
+  .rule-d, .row-d, .when { color: var(--muted); }
+  .rule-d, .row-d { font-size: 15px; }
+
+  .split { display: flex; flex-wrap: wrap; gap: 48px; }
+  .split > :first-child { flex: 999 1 460px; min-width: 0; }
+  .split > :last-child { flex: 1 1 320px; min-width: 0; }
+  .row { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .row:last-child { border-bottom: 1px solid var(--line); }
+  .row-t { font-weight: 600; }
+  .when { font-size: 14px; white-space: nowrap; }
+  .edu { margin-top: 40px; }
+  .stack { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .stack li { padding: 6px 14px; font-size: 14px; }
+
+  footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--line); }
+  footer .sign { font-size: 14px; color: var(--muted); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 4px; }
+  footer nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; font-size: 14px; }
+
+  /* Phone: the name lives in the hero, so the bar keeps only the theme button */
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px 72px; }
+    nav.top { position: absolute; top: 14px; right: 20px; margin: 0; padding: 0; background: none; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .brand, .navlinks a { display: none; }
+    .hero { padding: 20px 0 8px; gap: 24px; }
+    .hero-col { display: flex; flex-direction: column; }
+    .who { margin-bottom: 18px; padding-right: 56px; }
+    h1 { font-size: 30px; margin-bottom: 14px; }
+    .lede { font-size: 16px; margin-bottom: 20px; }
+    .lede-more { display: none; }
+    .cta { flex: 1 1 0; padding: 0 12px; }
+    .creds { order: 5; margin: 20px 0 0; }
+    .cred { font-size: 13px; border-radius: 18px; }
+    section { padding-top: 56px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card, .cta { transition: none; } .card:hover, .cta:hover { transform: none; }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass, .pill, nav.top, .cta.secondary { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--solid); }
+  }
+  @media (prefers-contrast: more) {
+    .ambient { display: none; }
+    .glass, .pill, nav.top, .cta.secondary { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--solid); border-color: var(--edge); box-shadow: none; }
+    h1, .lede, .card p, .rule-d, .row-d, .when, h2, .handle span, .gh-text p, footer .sign, .navlinks a { color: var(--text); }
+    .row, ol.rules li, .now-item, footer { border-color: var(--edge); }
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass, .pill, .cta.secondary { background: var(--solid); }
+    nav.top { background: var(--solid); }
+  }
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<div class="wrap">
+
+  <nav class="top" aria-label="Main">
+    <a class="brand" href="#top">Jorge Giuffra</a>
+    <div class="navlinks">
+      <a href="#systems">Systems</a>
+      <a href="#github">GitHub</a>
+      <a href="#rules">Rules</a>
+      <a href="#career">Career</a>
+      <button class="theme pill" id="theme" type="button" aria-label="Switch theme">
+        <svg class="i-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="hero-col">
+      <div class="who">
+        <div class="avatar" aria-hidden="true">JG</div>
+        <div>
+          <div class="handle">@JorgeGiuffra <span>· aka jojo</span></div>
+          <div class="role">Growth &amp; Commercial Director @ MultiMoney</div>
+        </div>
+      </div>
+      <div class="creds">
+        <span class="pill cred">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+          MSc Innovation &amp; Entrepreneurship · HEC Paris
+        </span>
+        <span class="pill cred">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>
+          Google Developer Expert · 2016–2025
+        </span>
+      </div>
+      <h1 class="display">A <b>fintech head of growth</b> who works like a <b>marketing engineer</b>.</h1>
+      <p class="lede">I build my own agents and my own measurement.<span class="lede-more"> Paid media, attribution, CRM and landing pages, vibe-coded with coding agents and run in production.</span></p>
+      <div class="ctas">
+        <a class="cta primary" href="https://x.com/JorgeGiuffra">Follow on X
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+        <a class="cta secondary" href="#systems">See the systems</a>
+      </div>
+    </div>
+
+    <aside class="now glass" aria-labelledby="now-h">
+      <h2 id="now-h">Now</h2>
+      <div class="now-item"><div class="kicker">Measurement</div>Extending the conversions relay to messaging</div>
+      <div class="now-item"><div class="kicker">Agents</div>Hardening a team of drafting bots</div>
+      <div class="now-item"><div class="kicker">Growth</div>Shipping a lead magnet landing page</div>
+    </aside>
+  </header>
+
+  <section id="systems" aria-labelledby="systems-h">
+    <div class="sec-head"><h2 id="systems-h">Systems in production</h2></div>
+    <div class="grid">
+      <article class="card glass"><div class="kicker">Agent</div><h3 class="display">Paid media agent</h3><p>Reads the ad account every day and ranks campaigns by cost per conversion, not by clicks. It flags and proposes; a human approves every budget move.</p></article>
+      <article class="card glass"><div class="kicker">Measurement</div><h3 class="display">Server-side conversions relay</h3><p>Sends backend conversions to Meta, Google and TikTok, deduplicated against the browser, so each platform optimizes on what the business actually counts.</p></article>
+      <article class="card glass"><div class="kicker">Measurement</div><h3 class="display">In-house attribution</h3><p>Every conversion carries its own source, campaign and ad from first touch, so credit doesn't depend on what each platform reports about itself.</p></article>
+      <article class="card glass"><div class="kicker">Diagnosis</div><h3 class="display">Funnel drop diagnosis</h3><p>A chain of skills that goes from "conversions fell yesterday" to the source, the campaign, the funnel step and the ad behind it.</p></article>
+      <article class="card glass"><div class="kicker">Guardrail</div><h3 class="display">Evidence gate</h3><p>An adversarial reviewer that checks every verdict against minimum data and downgrades it when the evidence isn't there. It can only confirm or downgrade.</p></article>
+      <article class="card glass"><div class="kicker">CRM</div><h3 class="display">Sales pipeline triage</h3><p>An agent that reads the sales board three times a day, picks which deals to work, and drafts the first message for each one.</p></article>
+    </div>
+  </section>
+
+  <section id="github" aria-labelledby="github-h">
+    <div class="sec-head"><h2 id="github-h">GitHub</h2><a href="https://github.com/jorgegiuffra-prog">Profile</a></div>
+    <div class="gh glass">
+      <div class="gh-text">
+        <div class="gh-num display" id="gh-total">226</div>
+        <p>contributions in the last year, all of it in private repos: agents, measurement relays and reporting pipelines.</p>
+      </div>
+      <div class="gh-scroll">
+        <div class="gh-grid" id="gh-grid" role="img" aria-label="Contributions per day over the last twelve months. Most activity falls between June and August."></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules" aria-labelledby="rules-h">
+    <div class="sec-head"><h2 id="rules-h">Rules I work by</h2><a href="https://x.com/JorgeGiuffra">More on X</a></div>
+    <ol class="rules">
+      <li><span class="num" aria-hidden="true">01</span><div><div class="rule-t">CTR and CPM are not KPIs.</div><div class="rule-d">They don't move cost per conversion at the margin. I don't chase them daily.</div></div></li>
+      <li><span class="num" aria-hidden="true">02</span><div><div class="rule-t">Never decide from a single day.</div><div class="rule-d">One day of conversions is noise. Budget calls need three to seven days.</div></div></li>
+      <li><span class="num" aria-hidden="true">03</span><div><div class="rule-t">A pixel winner is not a business winner.</div><div class="rule-d">Scale on the platform metric, but let downstream quality veto it.</div></div></li>
+      <li><span class="num" aria-hidden="true">04</span><div><div class="rule-t">Don't turn off a winner without a successor.</div><div class="rule-d">The platform will retire a good ad early. Protect it by hand.</div></div></li>
+      <li><span class="num" aria-hidden="true">05</span><div><div class="rule-t">Agents propose, people approve.</div><div class="rule-d">Nothing changes a live budget on its own unless I delegated that exact job.</div></div></li>
+    </ol>
+  </section>
+
+  <section class="split">
+    <div id="career">
+      <div class="sec-head"><h2 id="career-h">Experience</h2><a href="https://www.linkedin.com/in/jojogiuffra">LinkedIn</a></div>
+      <div class="row"><div><div class="row-t">Growth &amp; Commercial Director · MultiMoney</div><div class="row-d">Digital lending fintech in Mexico and Nicaragua. Acquisition, CRM, contact center and partnerships, with AI agents running in production.</div></div><div class="when">2024 – Now</div></div>
+      <div class="row"><div><div class="row-t">Growth &amp; Digital Product Deputy Director · Banco Santander Mexico</div><div class="row-d">Took debit card acquisition from 0 to 100K new customers a month in under a year.</div></div><div class="when">2022 – 2024</div></div>
+      <div class="row"><div><div class="row-t">Co-founder, Head of Growth and Product · Eme-té</div><div class="row-d">Fashion e-commerce for independent brands. $1.2M in sales in the first year and $1M raised.</div></div><div class="when">2019 – 2022</div></div>
+      <div class="row"><div><div class="row-t">Head of Growth · Rocket.la</div><div class="row-d">Consumer finance marketplace with 1M+ customers. Raised the credit approval rate from 3% to 30%.</div></div><div class="when">2016 – 2020</div></div>
+      <div class="sec-head edu"><h2>Education</h2></div>
+      <div class="row"><div><div class="row-t">HEC Paris</div><div class="row-d">MSc in Innovation and Entrepreneurship, in progress.</div></div><div class="when">2025 – 2027</div></div>
+    </div>
+    <div>
+      <div class="sec-head"><h2>Stack</h2></div>
+      <ul class="stack">
+        <li class="pill">Claude Code</li><li class="pill">Codex</li><li class="pill">Meta Ads API</li><li class="pill">Google Ads</li>
+        <li class="pill">TikTok Events API</li><li class="pill">Amplitude</li><li class="pill">HubSpot</li><li class="pill">Supabase</li>
+        <li class="pill">SQL · Athena</li><li class="pill">Tag Manager</li><li class="pill">Python</li><li class="pill">TypeScript</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="sign">Jorge Giuffra · Growth, built like engineering</div>
+    <nav aria-label="Elsewhere">
+      <a href="https://x.com/JorgeGiuffra">X</a>
+      <a href="https://www.linkedin.com/in/jojogiuffra">LinkedIn</a>
+      <a href="https://github.com/jorgegiuffra-prog">GitHub</a>
+    </nav>
+  </footer>
+</div>
+
+<script>
+  // Theme: follow the system unless the visitor picked one with the button
+  (function () {
+    var root = document.documentElement, key = 'theme';
+    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    var bars = document.querySelectorAll('meta[name="theme-color"]');
+    function current() { return root.dataset.theme || (darkQuery.matches ? 'dark' : 'light'); }
+    function paintBar() {
+      if (!root.dataset.theme) return; // no override: the media-specific tags already match
+      var c = root.dataset.theme === 'dark' ? '#0c0e12' : '#eef1f5';
+      bars.forEach(function (m) { m.setAttribute('content', c); });
+    }
+    paintBar();
+    document.getElementById('theme').addEventListener('click', function () {
+      var next = current() === 'light' ? 'dark' : 'light';
+      root.dataset.theme = next;
+      paintBar();
+      try { localStorage.setItem(key, next); } catch (e) {}
+    });
+  })();
+
+  // GitHub contribution calendar, 2025-11-16 to 2026-11-16 (leading days are all zero)
+  (function () {
+    var tail = [4,2,0,0,0,3,5,3,0,5,13,15,2,0,0,1,0,1,0,0,1,1,14,1,4,9,2,0,6,7,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,7,0,2,5,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,2,0,0,0,0,0,0,0,0,0,0,15,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,7,6,12,29,0,0,0,2,0,0,7,1,0,0,0,0,0,0];
+    var days = new Array(366 - tail.length).fill(0).concat(tail);
+    var grid = document.getElementById('gh-grid');
+    var months = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+    var last = -1, total = 0;
+    for (var i = 0; i < days.length; i += 7) {
+      var week = document.createElement('div'); week.className = 'gh-week'; week.setAttribute('aria-hidden', 'true');
+      var first = new Date(2025, 10, 16 + i), label = document.createElement('div');
+      label.className = 'gh-month';
+      if (first.getMonth() !== last && first.getDate() <= 7) { last = first.getMonth(); label.textContent = months[last]; }
+      week.appendChild(label);
+      days.slice(i, i + 7).forEach(function (n, j) {
+        total += n;
+        var c = document.createElement('div'); c.className = 'gh-cell';
+        if (n) c.style.background = 'rgba(var(--cell-rgb),' + (n >= 8 ? 1 : n >= 4 ? 0.8 : n >= 2 ? 0.6 : 0.38) + ')';
+        var d = new Date(2025, 10, 16 + i + j);
+        c.title = n + ' contributions · ' + months[d.getMonth()] + ' ' + d.getDate();
+        week.appendChild(c);
+      });
+      grid.appendChild(week);
+    }
+    document.getElementById('gh-total').textContent = total;
+  })();
+</script>
+</body>
+</html>
